@@ -12,6 +12,7 @@ class TableViewController: UITableViewController {
     lazy var dataSource = configureDataSource()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.dataSource = dataSource
         
