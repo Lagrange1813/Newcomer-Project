@@ -81,4 +81,13 @@ class TableViewController: UITableViewController {
         return swipeConfiguration
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCatDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! DetailViewController
+                destinationController.catImageName = self.cats[indexPath.row].image
+            }
+        }
+    }
+    
 }

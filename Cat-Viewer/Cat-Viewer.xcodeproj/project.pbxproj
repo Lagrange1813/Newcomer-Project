@@ -16,6 +16,7 @@
 		7A0E4AEB27327B8E008A7129 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E4AEA27327B8E008A7129 /* TableViewCell.swift */; };
 		7A0E4AED27328E23008A7129 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E4AEC27328E23008A7129 /* Cat.swift */; };
 		7AA7888D2732C1F0002946F9 /* DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7888C2732C1F0002946F9 /* DiffableDataSource.swift */; };
+		7AA7888F27338083002946F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7888E27338083002946F9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7A0E4AEA27327B8E008A7129 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7A0E4AEC27328E23008A7129 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		7AA7888C2732C1F0002946F9 /* DiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSource.swift; sourceTree = "<group>"; };
+		7AA7888E27338083002946F9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				7A0E4AE827327B43008A7129 /* TableViewController.swift */,
+				7AA7888E27338083002946F9 /* DetailViewController.swift */,
 			);
 			path = Controllor;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				7A0E4AE927327B43008A7129 /* TableViewController.swift in Sources */,
 				7A0E4A9327316C00008A7129 /* SceneDelegate.swift in Sources */,
 				7AA7888D2732C1F0002946F9 /* DiffableDataSource.swift in Sources */,
+				7AA7888F27338083002946F9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
