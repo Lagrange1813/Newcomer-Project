@@ -15,3 +15,8 @@
 * ![屏幕截图 2021-11-04 101104](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-11-04%20101104.png)
 * 完成大图查看
 * ![屏幕截图 2021-11-04 110407](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-11-04%20110407.png)
+
+### 2021.11.14
+
+* 使用纯代码布局完成基本框架
+* 明天有空探索纯代码设计单元格
