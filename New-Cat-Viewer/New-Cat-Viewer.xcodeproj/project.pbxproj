@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		06AD740912EBA55C7084C169 /* Pods_New_Cat_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FCDA94CAEFF625B27BE632 /* Pods_New_Cat_Viewer.framework */; };
-		7A185EAC27411A650008E747 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A185EAB27411A650008E747 /* ImageViewController.swift */; };
+		7A185EAC27411A650008E747 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A185EAB27411A650008E747 /* ImageVC.swift */; };
 		7A5A39D02740B5D400966F4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A39CF2740B5D400966F4C /* AppDelegate.swift */; };
 		7A5A39D92740B5D500966F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5A39D82740B5D500966F4C /* Assets.xcassets */; };
 		7A5A39DC2740B5D500966F4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5A39DA2740B5D500966F4C /* LaunchScreen.storyboard */; };
+		7A6F47082743C8CB001F0EA4 /* CatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F47072743C8CB001F0EA4 /* CatCell.swift */; };
 		7A948D902740BF8000529C36 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A948D8F2740BF8000529C36 /* Cat.swift */; };
-		7A948D922740BFB800529C36 /* CatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A948D912740BFB800529C36 /* CatTableViewController.swift */; };
+		7A948D922740BFB800529C36 /* CatTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A948D912740BFB800529C36 /* CatTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		605994F2878E9F177114BC81 /* Pods-New-Cat-Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New-Cat-Viewer.release.xcconfig"; path = "Target Support Files/Pods-New-Cat-Viewer/Pods-New-Cat-Viewer.release.xcconfig"; sourceTree = "<group>"; };
-		7A185EAB27411A650008E747 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		7A185EAB27411A650008E747 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		7A5A39CC2740B5D400966F4C /* New-Cat-Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "New-Cat-Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5A39CF2740B5D400966F4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A5A39D82740B5D500966F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A5A39DB2740B5D500966F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A5A39DD2740B5D500966F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A6F47072743C8CB001F0EA4 /* CatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCell.swift; sourceTree = "<group>"; };
 		7A948D8F2740BF8000529C36 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
-		7A948D912740BFB800529C36 /* CatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewController.swift; sourceTree = "<group>"; };
+		7A948D912740BFB800529C36 /* CatTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableVC.swift; sourceTree = "<group>"; };
 		9B1837E8241646FF113C84F5 /* Pods-New-Cat-Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New-Cat-Viewer.debug.xcconfig"; path = "Target Support Files/Pods-New-Cat-Viewer/Pods-New-Cat-Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C6FCDA94CAEFF625B27BE632 /* Pods_New_Cat_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_New_Cat_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,15 +82,40 @@
 		7A5A39CE2740B5D400966F4C /* New-Cat-Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				7A948D8F2740BF8000529C36 /* Cat.swift */,
+				7A6F470D2743D92C001F0EA4 /* View */,
+				7A6F470C2743D910001F0EA4 /* Controller */,
+				7A6F470B2743D901001F0EA4 /* Model */,
 				7A5A39CF2740B5D400966F4C /* AppDelegate.swift */,
 				7A5A39D82740B5D500966F4C /* Assets.xcassets */,
 				7A5A39DA2740B5D500966F4C /* LaunchScreen.storyboard */,
 				7A5A39DD2740B5D500966F4C /* Info.plist */,
-				7A948D912740BFB800529C36 /* CatTableViewController.swift */,
-				7A185EAB27411A650008E747 /* ImageViewController.swift */,
 			);
 			path = "New-Cat-Viewer";
+			sourceTree = "<group>";
+		};
+		7A6F470B2743D901001F0EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A948D8F2740BF8000529C36 /* Cat.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A6F470C2743D910001F0EA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A948D912740BFB800529C36 /* CatTableVC.swift */,
+				7A185EAB27411A650008E747 /* ImageVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A6F470D2743D92C001F0EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A6F47072743C8CB001F0EA4 /* CatCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5A39D02740B5D400966F4C /* AppDelegate.swift in Sources */,
-				7A948D922740BFB800529C36 /* CatTableViewController.swift in Sources */,
-				7A185EAC27411A650008E747 /* ImageViewController.swift in Sources */,
+				7A948D922740BFB800529C36 /* CatTableVC.swift in Sources */,
+				7A6F47082743C8CB001F0EA4 /* CatCell.swift in Sources */,
+				7A185EAC27411A650008E747 /* ImageVC.swift in Sources */,
 				7A948D902740BF8000529C36 /* Cat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

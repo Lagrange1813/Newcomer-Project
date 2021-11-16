@@ -7,9 +7,13 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageVC: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+    
     var didSetupConstraints = false
-
     var imageName = "001"
     lazy var imageView: UIImageView = {
         var view = UIImageView()
@@ -17,13 +21,9 @@ class ImageViewController: UIViewController {
         return view
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    func configureView(){
         view.backgroundColor = .systemBackground
-
         view.addSubview(imageView)
-
         view.setNeedsUpdateConstraints()
     }
 
@@ -33,10 +33,8 @@ class ImageViewController: UIViewController {
                 make.center.equalTo(view)
                 make.size.equalTo(CGSize(width: 400, height: 400))
             }
-
             didSetupConstraints = true
         }
-
         super.updateViewConstraints()
     }
 }
