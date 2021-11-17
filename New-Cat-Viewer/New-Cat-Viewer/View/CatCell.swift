@@ -51,8 +51,9 @@ class CatCell: UITableViewCell {
     
     
     func configureStepLabel() {
-        nameLabel.numberOfLines = 0
-        nameLabel.adjustsFontSizeToFitWidth = true
+        stepLabel.numberOfLines = 0
+        stepLabel.textColor = .gray
+        stepLabel.adjustsFontSizeToFitWidth = true
     }
     
     
@@ -74,13 +75,6 @@ class CatCell: UITableViewCell {
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
         }
 
-    }
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
     }
     
 }
