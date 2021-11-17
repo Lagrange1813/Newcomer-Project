@@ -86,4 +86,34 @@ class CatTableVC: UITableViewController {
         viewController.imageName = cats[indexPath.row].image
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Get the selected cat
+        guard let cat = self.dataSource.itemIdentifier(for: indexPath)
+        else {
+            return UISwipeActionsConfiguration()
+        }
+        // Delete
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            var snapshot = self.dataSource.snapshot()
+            snapshot.deleteItems([cat])
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+            completionHandler(true)
+        }
+        // Share
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            let defaultText = "看看这只猫猫！"
+            let activityController: UIActivityViewController
+            if let imageToShare = UIImage(named: cat.image) {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil) }else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+        }
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
+        // Configure both actions as swipe action
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        return swipeConfiguration
+    }
 }

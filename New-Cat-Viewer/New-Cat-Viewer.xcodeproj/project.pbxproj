@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06AD740912EBA55C7084C169 /* Pods_New_Cat_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FCDA94CAEFF625B27BE632 /* Pods_New_Cat_Viewer.framework */; };
 		7A185EAC27411A650008E747 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A185EAB27411A650008E747 /* ImageVC.swift */; };
+		7A453E522744E5FC000D0CB3 /* CatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A453E512744E5FC000D0CB3 /* CatDataSource.swift */; };
 		7A5A39D02740B5D400966F4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A39CF2740B5D400966F4C /* AppDelegate.swift */; };
 		7A5A39D92740B5D500966F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5A39D82740B5D500966F4C /* Assets.xcassets */; };
 		7A5A39DC2740B5D500966F4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5A39DA2740B5D500966F4C /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		605994F2878E9F177114BC81 /* Pods-New-Cat-Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New-Cat-Viewer.release.xcconfig"; path = "Target Support Files/Pods-New-Cat-Viewer/Pods-New-Cat-Viewer.release.xcconfig"; sourceTree = "<group>"; };
 		7A185EAB27411A650008E747 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		7A453E512744E5FC000D0CB3 /* CatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDataSource.swift; sourceTree = "<group>"; };
 		7A5A39CC2740B5D400966F4C /* New-Cat-Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "New-Cat-Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5A39CF2740B5D400966F4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A5A39D82740B5D500966F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				7A948D8F2740BF8000529C36 /* Cat.swift */,
+				7A453E512744E5FC000D0CB3 /* CatDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5A39D02740B5D400966F4C /* AppDelegate.swift in Sources */,
+				7A453E522744E5FC000D0CB3 /* CatDataSource.swift in Sources */,
 				7A948D922740BFB800529C36 /* CatTableVC.swift in Sources */,
 				7A6F47082743C8CB001F0EA4 /* CatCell.swift in Sources */,
 				7A185EAC27411A650008E747 /* ImageVC.swift in Sources */,
