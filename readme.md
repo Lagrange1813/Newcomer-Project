@@ -26,5 +26,5 @@
 ### 2021.11.17
 
 * 纯代码完成 custom cell ，折腾了好久🥱
-* [屏幕截图 2021-11-04 110407](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-11-04%20110407.png)
+* ![截屏2021-11-17 上午11.27.59.png](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E6%88%AA%E5%B1%8F2021-11-17%20%E4%B8%8A%E5%8D%8811.27.59.png)
 
