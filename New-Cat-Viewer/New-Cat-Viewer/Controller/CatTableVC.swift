@@ -16,17 +16,17 @@ class CatTableVC: UITableViewController {
     
     
     // MARK: - Load data
-//    var cats: [Cat] = [
-//        Cat(name: "这是第1张猫猫", step: "这是第1张猫猫", image: "001"),
-//        Cat(name: "这是第2张猫猫", step: "这是第2张猫猫", image: "002"),
-//        Cat(name: "这是第3张猫猫", step: "这是第3张猫猫", image: "003"),
-//        Cat(name: "这是第4张猫猫", step: "这是第4张猫猫", image: "004"),
-//        Cat(name: "这是第5张猫猫", step: "这是第5张猫猫", image: "005"),
-//        Cat(name: "这是第6张猫猫", step: "这是第6张猫猫", image: "006"),
-//        Cat(name: "这是第7张猫猫", step: "这是第7张猫猫", image: "007")
-//    ]
-    var catNames = ["这是第1张猫猫", "这是第2张猫猫", "这是第3张猫猫", "这是第4张猫猫", "这是第5张猫猫", "这是第6张猫猫", "这是第7张猫猫"]
-    var catImages = ["001", "002", "003", "004", "005", "006", "007"]
+    var cats: [Cat] = [
+        Cat(name: "这是第1张猫猫", step: "这是第1张猫猫", image: "001"),
+        Cat(name: "这是第2张猫猫", step: "这是第2张猫猫", image: "002"),
+        Cat(name: "这是第3张猫猫", step: "这是第3张猫猫", image: "003"),
+        Cat(name: "这是第4张猫猫", step: "这是第4张猫猫", image: "004"),
+        Cat(name: "这是第5张猫猫", step: "这是第5张猫猫", image: "005"),
+        Cat(name: "这是第6张猫猫", step: "这是第6张猫猫", image: "006"),
+        Cat(name: "这是第7张猫猫", step: "这是第7张猫猫", image: "007")
+    ]
+//    var catNames = ["这是第1张猫猫", "这是第2张猫猫", "这是第3张猫猫", "这是第4张猫猫", "这是第5张猫猫", "这是第6张猫猫", "这是第7张猫猫"]
+//    var catImages = ["001", "002", "003", "004", "005", "006", "007"]
     let cellIdentifier = "datacell"
     enum Section {
         case all
@@ -36,29 +36,28 @@ class CatTableVC: UITableViewController {
     // MARK: - Configure view
     func configureTableView() {
         title = "猫猫查看器"
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView?.register(CatCell.self, forCellReuseIdentifier: cellIdentifier)
         self.tableView.rowHeight = 140
+//        tableView.dataSource = self
+//        tableView.delegate = self
         showDataSource()
     }
     
     func showDataSource() {
         tableView.dataSource = dataSource
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Cat>()
         snapshot.appendSections([.all])
-        snapshot.appendItems(catNames, toSection: .all)
+        snapshot.appendItems(cats, toSection: .all)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    func configureDataSource() -> UITableViewDiffableDataSource<Section, String >{
+    func configureDataSource() -> UITableViewDiffableDataSource<Section, Cat>{
         let cellIdentifier = "datacell"
-        let dataSource = UITableViewDiffableDataSource<Section, String>(
+        let dataSource = UITableViewDiffableDataSource<Section, Cat>(
             tableView: tableView,
-            cellProvider: {  tableView, indexPath, catName in
-                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-                cell.textLabel?.text = catName
-                cell.imageView?.image = UIImage(named: self.catImages[indexPath.row])
-                cell.imageView?.layer.cornerRadius = 15
-                cell.imageView?.clipsToBounds = true
+            cellProvider: {  tableView, indexPath, cat in
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CatCell
+                cell.set(cat: cat)
                 return cell
             }
         )
@@ -66,15 +65,16 @@ class CatTableVC: UITableViewController {
     }
     
     lazy var dataSource = configureDataSource()
+    
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return cats.count
 //    }
 //
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)! as UITableViewCell
-//
-//        cell.textLabel?.text = cats[indexPath.row].name
-//        cell.imageView?.image = UIImage(named: cats[indexPath.row].image)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)! as! CatCell
+//        cell.set(cat: cats[indexPath.row])
+////        cell.nameLabel.text = catNames[indexPath.row]
+////        cell.imgView.image = UIImage(named: catImages[indexPath.row])
 //
 //        return cell
 //    }
@@ -83,7 +83,7 @@ class CatTableVC: UITableViewController {
     // MARK: - Function
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = ImageVC()
-        viewController.imageName = catImages[indexPath.row]
+        viewController.imageName = cats[indexPath.row].image
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

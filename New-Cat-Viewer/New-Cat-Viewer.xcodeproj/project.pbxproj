@@ -61,6 +61,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7A299C8F2744715F00ED074C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7A5A39C32740B5D400966F4C = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +89,7 @@
 		7A5A39CE2740B5D400966F4C /* New-Cat-Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				7A299C8F2744715F00ED074C /* Extension */,
 				7A6F470D2743D92C001F0EA4 /* View */,
 				7A6F470C2743D910001F0EA4 /* Controller */,
 				7A6F470B2743D901001F0EA4 /* Model */,

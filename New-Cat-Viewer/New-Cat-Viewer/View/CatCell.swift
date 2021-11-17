@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class CatCell: UITableViewCell {
     
-    var imgView: UIImageView!
-    var nameLabel: UILabel!
-    var stepLabel: UILabel!
+    var imgView = UIImageView()
+    var nameLabel = UILabel()
+    var stepLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,10 +24,17 @@ class CatCell: UITableViewCell {
         configureImgView()
         configureNameLabel()
         configureStepLabel()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(cat: Cat) {
+        imgView.image = UIImage(named: cat.image)
+        nameLabel.text = cat.name
+        stepLabel.text = cat.step
     }
     
     
@@ -43,7 +51,8 @@ class CatCell: UITableViewCell {
     
     
     func configureStepLabel() {
-        
+        nameLabel.numberOfLines = 0
+        nameLabel.adjustsFontSizeToFitWidth = true
     }
     
     
@@ -51,8 +60,8 @@ class CatCell: UITableViewCell {
 
         imgView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 120, height: 120))
-            make.leading.equalToSuperview()
-            make.centerY.equalTo(superview?.center as! ConstraintRelatableTarget)
+            make.leading.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
         }
 
         nameLabel.snp.makeConstraints { make in
@@ -65,6 +74,13 @@ class CatCell: UITableViewCell {
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
         }
 
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        
     }
     
 }
