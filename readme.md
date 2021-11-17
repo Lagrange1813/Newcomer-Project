@@ -31,4 +31,4 @@
 * ![截屏2021-11-17 下午3.29.23.png](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E6%88%AA%E5%B1%8F2021-11-17%20%E4%B8%8B%E5%8D%883.29.23.png)
 * ![截屏2021-11-17 下午3.29.38.png](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E6%88%AA%E5%B1%8F2021-11-17%20%E4%B8%8B%E5%8D%883.29.38.png)
 * 更改字体大小，增加区分度
-* ![截屏2021-11-17 下午3.29.38.png](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E6%88%AA%E5%B1%8F2021-11-17%20%E4%B8%8B%E5%8D%883.29.38.png)
+* ![截屏2021-11-17 下午7.38.33.png](https://github.com/Lagrange1813/Cat-Viewer/blob/master/images/%E6%88%AA%E5%B1%8F2021-11-17%20%E4%B8%8B%E5%8D%887.38.33.png)
