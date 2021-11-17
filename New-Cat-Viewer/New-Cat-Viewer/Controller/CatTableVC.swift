@@ -38,8 +38,6 @@ class CatTableVC: UITableViewController {
         title = "猫猫查看器"
         tableView?.register(CatCell.self, forCellReuseIdentifier: cellIdentifier)
         self.tableView.rowHeight = 140
-//        tableView.dataSource = self
-//        tableView.delegate = self
         showDataSource()
     }
     

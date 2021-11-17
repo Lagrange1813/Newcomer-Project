@@ -47,6 +47,7 @@ class CatCell: UITableViewCell {
     func configureNameLabel() {
         nameLabel.numberOfLines = 0
         nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.font = UIFont.systemFont(ofSize: 20)
     }
     
     
@@ -54,6 +55,7 @@ class CatCell: UITableViewCell {
         stepLabel.numberOfLines = 0
         stepLabel.textColor = .gray
         stepLabel.adjustsFontSizeToFitWidth = true
+        stepLabel.font = UIFont.systemFont(ofSize: 15)
     }
     
     
