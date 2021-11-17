@@ -56,6 +56,10 @@ class CatTableVC: UITableViewController {
             cellProvider: {  tableView, indexPath, cat in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CatCell
                 cell.set(cat: cat)
+//                cell.nameLabel.text = cat.name
+//                cell.stepLabel.text = cat.step
+//                cell.imgView.image = UIImage(named: cat.image)
+                
                 return cell
             }
         )

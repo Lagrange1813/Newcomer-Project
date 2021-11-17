@@ -24,17 +24,15 @@ class ImageVC: UIViewController {
     func configureView(){
         view.backgroundColor = .systemBackground
         view.addSubview(imageView)
-        view.setNeedsUpdateConstraints()
+        setConstraints()
     }
 
-    override func updateViewConstraints() {
-        if !didSetupConstraints {
-            imageView.snp.makeConstraints { make in
-                make.center.equalTo(view)
-                make.size.equalTo(CGSize(width: 400, height: 400))
-            }
-            didSetupConstraints = true
+    func setConstraints() {
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.size.height.equalTo(imageView.snp.width)
         }
-        super.updateViewConstraints()
     }
 }
