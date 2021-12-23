@@ -20,10 +20,15 @@ extension ViewController {
     // 配置背景和其他基础项
     func configureBackground() {
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+
         gameView.backgroundColor = .black
+
         score = UILabel(frame: CGRect(x: view.frame.width - 60, y: 20, width: 40, height: 20))
         score.text = String(cnt)
         score.textColor = .white
+
+        gameView.addSubview(score)
+
         let heart1 = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 22))
         let heart2 = UIImageView(frame: CGRect(x: 45, y: 10, width: 30, height: 22))
         let heart3 = UIImageView(frame: CGRect(x: 80, y: 10, width: 30, height: 22))
@@ -40,7 +45,6 @@ extension ViewController {
         for x in 0 ..< loseCnt {
             hearts[x].image = UIImage(systemName: "heart")
         }
-        gameView.addSubview(score)
     }
 
     // 配置控制器
@@ -48,12 +52,31 @@ extension ViewController {
         let velocityMultiplier: CGFloat = 0.12
         let height = view.frame.height / 2
         let width = view.frame.width
+        let size = 100
 
-        joyStick = JoyStick(x: 200, y: 200)
+        joyStick = JoyStick(x: 50.0,
+                            y: view.frame.height - 50.0 - Double(size),
+                            size: size)
         gameView.addSubview(joyStick)
+
         joyStick.handler = { [unowned self] data in
             self.plane.center = CGPoint(x: plane.center.x + (data.velocity.x * velocityMultiplier),
                                         y: plane.center.y + (data.velocity.y * velocityMultiplier))
+
+            let upSide = plane.frame.origin.y
+            let downSide = plane.frame.origin.y + plane.frame.height
+            let leftSide = plane.frame.origin.x
+            let rightSide = plane.frame.origin.x + plane.frame.width
+
+            if upSide < 0 {
+                plane.frame.origin.y = 0
+            } else if leftSide < 0 {
+                plane.frame.origin.x = 0
+            } else if downSide > view.frame.height {
+                plane.frame.origin.y = view.frame.height - plane.frame.height
+            } else if rightSide > view.frame.width {
+                plane.frame.origin.x = view.frame.width - plane.frame.width
+            }
         }
 
         let fireButton = UIButton(frame: CGRect(x: width - height, y: height, width: height, height: height))
@@ -77,6 +100,7 @@ extension ViewController {
         plane.frame = CGRect(x: x, y: y, width: plane_width, height: plane_height)
 
         gameView.addSubview(plane)
+        gameView.clipsToBounds = true
 
         location = fetchLocation()
     }
@@ -90,6 +114,7 @@ extension ViewController {
         collision.translatesReferenceBoundsIntoBoundary = false
         collision.collisionMode = .everything
         collision.collisionDelegate = self
+
         collision.addBoundary(withIdentifier: "upside" as NSCopying,
                               from: CGPoint(x: 0, y: 0),
                               to: CGPoint(x: 10000, y: 0))
@@ -103,9 +128,8 @@ extension ViewController {
         collision.addBoundary(withIdentifier: "front" as NSCopying,
                               from: CGPoint(x: 1000, y: 0),
                               to: CGPoint(x: 1000, y: view.frame.height))
-        animator.addBehavior(collision)
 
-        print(location)
+        animator.addBehavior(collision)
     }
 }
 
@@ -150,6 +174,7 @@ func randomMinus() -> Int {
 extension ViewController {
     func levelUP(_ location: [Double]) {
         alien = UIImageView()
+
         let width = view.frame.width - 100.0
 
         var enemy = Aliens()

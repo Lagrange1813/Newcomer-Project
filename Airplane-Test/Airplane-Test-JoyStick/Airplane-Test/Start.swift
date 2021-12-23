@@ -10,11 +10,14 @@ import UIKit
 extension ViewController {
     @objc func configureStartView() {
         view.backgroundColor = .black
+        
         startView = UIView(frame: CGRect(x: 0,
                                          y: 0,
                                          width: view.frame.width,
                                          height: view.frame.height))
+        
         view.addSubview(startView)
+        
         configureStartButton()
     }
     
@@ -23,13 +26,16 @@ extension ViewController {
         let buttonHeight = 20.0
         let x = view.center.x-buttonWidth/2.0
         let y = view.center.y-buttonHeight/2.0
+        
         let startButton = UIButton(frame: CGRect(x: x, y: y-25, width: buttonWidth, height: buttonHeight))
+        
         startButton.setTitle("开始游戏", for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.setTitleColor(.gray, for: .highlighted)
         startButton.addTarget(self, action: #selector(gameStart), for: .touchUpInside)
         
         let rankButton = UIButton(frame: CGRect(x: x, y: y+25, width: buttonWidth, height: buttonHeight))
+        
         rankButton.setTitle("排行榜", for: .normal)
         rankButton.setTitleColor(.white, for: .normal)
         rankButton.setTitleColor(.gray, for: .highlighted)
@@ -43,6 +49,7 @@ extension ViewController {
         startView.removeFromSuperview()
         location = []
         torpedo = nil
+        
         configureGameView()
         configureBackground()
         configureController()
@@ -66,6 +73,7 @@ extension ViewController {
         goButton.setTitleColor(.white, for: .normal)
         goButton.setTitleColor(.gray, for: .highlighted)
         goButton.addTarget(self, action: #selector(goBackToStartView), for: .touchUpInside)
+        
         rankView.addSubview(goButton)
         
         let x = view.center.x
@@ -86,8 +94,6 @@ extension ViewController {
             let texts = String(format: "第%d名\t分数 %4d\t时间 %@", x+1, score, time)
             ranks[x].text = texts
             ranks[x].textColor = .white
-            print(score)
-            print(time)
         }
         
         rankView.addSubview(first)

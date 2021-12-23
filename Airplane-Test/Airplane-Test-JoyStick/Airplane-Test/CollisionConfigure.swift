@@ -14,8 +14,8 @@ extension ViewController: UICollisionBehaviorDelegate {
             currentTorpedo.isHidden = true
             collision.removeItem(currentTorpedo)
         }
+        
         if identifier as! String == "back" {
-            print("lose")
             loseCnt += 1
             
             if joyStick.tracking {
@@ -34,6 +34,7 @@ extension ViewController: UICollisionBehaviorDelegate {
             if loseCnt >= 3 {
                 gameView.isHidden = true
                 gameView.removeFromSuperview()
+                
                 loseResult()
                 SqlOperator.insertRecord(cnt)
             } else {
@@ -52,13 +53,14 @@ extension ViewController: UICollisionBehaviorDelegate {
         if torpedo != nil {
             cnt += 1
             currentCnt += 1
+            
             if currentCnt >= 25 {
                 levelUP(location)
                 currentCnt = 0
                 enemyCnt += 1
             }
+            
             score.text = String(cnt)
-            print(cnt)
         }
     }
 }

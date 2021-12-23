@@ -29,6 +29,7 @@ extension ViewController {
         collision.addItem(torpedo)
 
         torpedoQueue.enqueue(newTorpedo)
+        
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
             let lastTorpedo = self.torpedoQueue.dequeue()
             lastTorpedo.isHidden = true

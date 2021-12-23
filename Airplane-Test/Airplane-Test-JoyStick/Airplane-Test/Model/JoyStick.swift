@@ -22,8 +22,8 @@ public struct JoyStickData: CustomStringConvertible {
 }
 
 class JoyStick: UIView {
-    private let joystickSize: CGFloat = 50
-    private let substractSize: CGFloat = 100
+    private let joystickSize: CGFloat!
+    private let substractSize: CGFloat!
     private var innerRadius: CGFloat = 0.0
     var tracking = false
     private var data = JoyStickData()
@@ -34,11 +34,15 @@ class JoyStick: UIView {
     var velocityLoop: CADisplayLink!
     var handler: ((JoyStickData) -> Void)?
 
-    init(x: Double, y: Double) {
+    init(x: Double, y: Double, size: Int) {
+        substractSize = CGFloat(size)
+        joystickSize = CGFloat(size / 2)
+        
         super.init(frame: CGRect(x: x,
                                  y: y,
                                  width: substractSize,
                                  height: substractSize))
+        
         backgroundColor = .gray
         layer.cornerRadius = CGFloat(substractSize / 2)
 

@@ -19,10 +19,17 @@ class ViewController: UIViewController {
     // 初始化变量
     let plane = UIImageView()
     var alien: UIImageView!
+    var torpedo: UIImageView!
+
     var torpedoQueue = Queue<UIImageView>()
     var alienQueue = Queue<UIImageView>()
+
     var joyStick: JoyStick!
-    var torpedo: UIImageView!
+    var gameView: UIView!
+    var startView: UIView!
+    var rankView: UIView!
+    var result: UIView!
+
     var location = [Double]()
     var cnt = 0
     var loseCnt = 0
@@ -30,15 +37,11 @@ class ViewController: UIViewController {
     var enemyCnt = 1
     var score: UILabel!
     var loseFlag = false
-    var gameView: UIView!
-    var startView: UIView!
-    var rankView: UIView!
-    var result: UIView!
+
+    override var shouldAutorotate: Bool { false }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureStartView()
     }
-
-    override var shouldAutorotate: Bool { false }
 }
